@@ -1,5 +1,6 @@
 const CHAT_ID_SPZ = process.env.CHAT_ID_SPZ;
 const GOOGLE_SHEETS_KEY = process.env.GOOGLE_SHEETS_KEY;
+const fetch = require('node-fetch');
 
 async function updateOrdersFromFetch(postData, bot, callback) {
   try {
@@ -22,7 +23,7 @@ async function updateOrdersFromFetch(postData, bot, callback) {
     } else {
       if (callback && typeof callback === "function") {
         callback(
-          "Статус заявки НЕ обновлен, пожалуйста сообщите администратору группы",
+          "Статус заявки НЕ обновлен, пожалуйста сообщите администратору группы ",
           null
         );
       }
