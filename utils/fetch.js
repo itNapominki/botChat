@@ -1,8 +1,9 @@
 const CHAT_ID_SPZ = process.env.CHAT_ID_SPZ;
+const GOOGLE_SHEETS_KEY = process.env.GOOGLE_SHEETS_KEY;
 
 async function updateOrdersFromFetch(postData, bot, callback) {
   try {
-    const response = await fetch(`${process.env.GOOGLE_SHEETS_KEY}`, {
+    const response = await fetch(`${GOOGLE_SHEETS_KEY}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
